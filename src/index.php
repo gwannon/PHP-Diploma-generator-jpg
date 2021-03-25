@@ -1,7 +1,6 @@
 <?php
-// (A) OPEN IMAGE
+// Abrimos la imagen
 $img = imagecreatefromjpeg('./diploma.jpg');
-
 
 //NOMBRE ------------------------
 //-------------------------------
@@ -18,7 +17,7 @@ $x = ($image_width/2) - ($text_width/2);
 $black = imagecolorallocate($img, 0, 0, 0);
 imagettftext($img, 160, 0, $x, 960, $black, $font, $txt);
 
-//NOMBRE ------------------------
+//TÍTULO ------------------------
 //-------------------------------
 $txt = mb_strtoupper($_REQUEST['title']);
 $font = "./fonts/Dosis-Regular.ttf";
@@ -32,9 +31,7 @@ $x = ($image_width/2) - ($text_width/2);
 $black = imagecolorallocate($img, 0, 0, 0);
 imagettftext($img, 80, 0, $x, 1300, $black, $font, $txt);
 
-
-
-//mostramos imagen
+//Mostramos imagen
 header('Content-type: image/jpeg');
 imagejpeg($img);
 imagedestroy($img);
